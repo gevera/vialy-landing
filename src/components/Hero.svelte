@@ -16,7 +16,7 @@
         </p>
         <button
           class="px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-green-400 hover:bg-green-500 focus:outline-none focus:bg-green-500"
-          >Добавить профиль</button
+          >Зарегистрировать</button
         >
       </div>
     </div>
