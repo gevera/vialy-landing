@@ -13,13 +13,16 @@
     <h2
       class="mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"
     >
-      Наша миссия
+      О нас
     </h2>
     <p class="text-base text-gray-700 md:text-lg sm:px-4">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. In iure rem
-      ratione, at consequatur totam rerum maiores suscipit dicta nisi debitis
-      excepturi reiciendis blanditiis, itaque, quo maxime! Inventore autem omnis
-      velit optio?
+      Кладбище Онлайн - это команда разработчиков программно-аппаратного
+      комплекса, которая поставила перед собой задачу сохранять память о людях
+      ушедших из жизни. Но сохранить память, это только половина дела,
+      необходимо передавать эту информацию последующим поколениям. Для этого мы
+      разработали принципы, алгоритмы и методы работы, которые в комплексе
+      позволяют решить эту задачу. Размещая у нас информацию о своих предках, вы
+      можете быть уверены в том, что она дойдет до потомков
     </p>
     <hr class="w-full my-8 border-gray-300" />
   </div>

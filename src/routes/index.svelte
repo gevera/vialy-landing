@@ -5,7 +5,7 @@
 <section>
   <Hero />
   <About />
-  <More />
+  <!-- <More /> -->
   <!-- <Pricing /> -->
   <Contact />
 </section>

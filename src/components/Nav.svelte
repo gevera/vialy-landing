@@ -188,7 +188,7 @@
                       aria-label="Our product"
                       title="Our product"
                       class="font-medium tracking-wide text-green-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >Миссия</a
+                      >О Нас</a
                     >
                   </li>
                   <li>

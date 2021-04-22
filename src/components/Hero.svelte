@@ -8,7 +8,7 @@
     >
       <div class="text-center">
         <h1 class="text-2xl font-semibold text-white uppercase md:text-3xl">
-          Build Your new <span class="text-green-400 underline">Saas</span>
+          Родословная <span class="text-green-400 underline">Онлайн</span>
         </h1>
         <p class="my-10 text-white w-2/3 mx-auto">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis

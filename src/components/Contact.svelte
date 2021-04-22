@@ -11,16 +11,18 @@
           нашего<span class="text-teal-accent-400 ml-2">сервиса</span>
         </h2>
         <p class="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
-          Услуга является платной для физических лиц, после отправки формы вы
-          будете перенаправлены на платежную страницу нашего банка. В случае
-          возникновения вопросов, вы можете позвонить в службу поддержки.
+          Для размещения профиля в системе вам нужно заказать корреспондента.
+          Услуга является платной. Все условия предоставления услуги отражены в
+          публичной оферте. (ссылка на оферту ниже)<br />
+          Услуга обработки заявки является платной, стоимость услуги - рублей.
         </p>
         <a
-          href="/"
+          href="https://docs.google.com/document/d/1z2b4BR7mCeQmNrnjo5O3WA81aqAs_2rBpjkxV6WBsQw/edit"
           aria-label=""
+          target="_blank"
           class="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
         >
-          Узнать больше
+          Оферта
           <svg
             class="inline-block w-3 ml-2"
             fill="currentColor"
@@ -62,14 +64,15 @@
             >
               Подключиться к системе
             </h3>
-            <form>
+            <form on:submit|preventDefault={submitContactForm}>
               <div class="mb-1 sm:mb-2">
                 <label for="name" class="inline-block mb-1 font-medium"
                   >Имя</label
                 >
                 <input
-                  placeholder="John Doe"
-                  required=""
+                  bind:value={name}
+                  placeholder="Введите имя"
+                  required
                   type="text"
                   class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                   id="name"
@@ -81,30 +84,34 @@
                   >Телефон</label
                 >
                 <input
-                  placeholder="john.doe@example.org"
-                  required=""
+                  use:imask={options}
+                  bind:value={telephone}
+                  on:accept={handleTelephone}
+                  on:complete={() => (allow = !allow)}
+                  required
+                  minlength="18"
+                  name="telephone"
+                  placeholder="+7 (000) 000-00-00"
                   type="tel"
                   class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                   id="telephone"
-                  name="telephone"
                 />
               </div>
-              <div class="mb-1 sm:mb-2">
+              <div class="my-4">
                 <p class="text-xs text-gray-600 sm:text-sm" />
                 <label class="text-xs text-gray-600 sm:text-sm">
-                  <input type="checkbox" bind:checked={agreed1} />
-                  Я согласен на все условия
-                </label>
-                <br />
-                <label class="text-xs text-gray-600 sm:text-sm">
-                  <input type="checkbox" bind:checked={agreed2} />
-                  Я согласен на все условия
+                  <input type="checkbox" bind:checked={agreed} />
+                  Я подтверждаю свое согласие на обработку моих персональных данных
+                  и согласен с условиями оферты (ссылка на оферту выше)
                 </label>
               </div>
               <div class="mt-4 mb-2 sm:mb-4">
                 <button
                   type="submit"
-                  class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  disabled={!allow}
+                  class:disabled={!allow}
+                  class:active={allow}
+                  class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded focus:outline-none"
                 >
                   Оставить заявку
                 </button>
@@ -118,6 +125,42 @@
 </div>
 
 <script>
-  let agreed1 = false;
-  let agreed2 = false;
+  import { imask } from 'svelte-imask';
+
+  let name = '';
+  let telephone = '';
+  let allow = false;
+  let agreed = false;
+
+  const options = {
+    mask: '+{7} (000) 000-00-00',
+  };
+
+  const handleTelephone = ({ detail }) => {
+    // allow = false;
+    if (detail.value.charAt(4) == '8') {
+      detail.value = detail.value.replace('8', '');
+    }
+  };
+
+  const submitContactForm = async () => {
+    console.log(name);
+    console.log(telephone);
+  };
+
+  $: if (name.length != 0 && telephone.length == 18 && agreed == true) {
+    allow = true;
+  } else {
+    allow = false;
+  }
 </script>
+
+<style>
+  .active {
+    @apply bg-green-400 hover:border-green-500 text-white cursor-pointer shadow-md;
+  }
+
+  .disabled {
+    @apply bg-green-100 text-gray-600 cursor-not-allowed;
+  }
+</style>
