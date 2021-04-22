@@ -46,6 +46,10 @@
 
           <div class="mt-10 md:mt-0 grid grid-cols-1 gap-10 w-full md:w-1/2">
             <div class="md:pl-8">
+              <div>
+                <h2 class="text-2xl text-center mb-6">О человеке</h2>
+                <p class="my-4 text-lg rounded-md border border-green-400 p-4">{data?.about}</p>
+              </div>
               <h2 class="text-2xl text-center mb-6">Родственики</h2>
               <ul class="flex flex-col divide divide-y">
                 {#if roditeli.length}
