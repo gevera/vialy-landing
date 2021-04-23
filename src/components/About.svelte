@@ -1,6 +1,7 @@
+<!-- class="mt-12 sm:mt-36 md:mt-42 lg:mt-56 px-4 pt-16 pb-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12" -->
 <div
   id="mission"
-  class="mt-12 sm:mt-36 md:mt-42 lg:mt-56 px-4 pt-16 pb-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12"
+  class="mt-12 px-4 pt-16 pb-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12"
 >
   <div class="max-w-screen-sm sm:text-center sm:mx-auto">
     <!-- <a href="/" aria-label="View" class="inline-block mb-5 rounded-full sm:mx-auto">

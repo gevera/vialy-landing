@@ -21,13 +21,13 @@
       </div>
     </div>
   </div>
-  <div
+  <!-- <div
     class="absolute -bottom-16 sm:-bottom-20 md:-bottom-36 lg:-bottom-56 left-p50"
   >
     <div class="mx-auto relative left-m50">
       <img src="hero-img.png" alt="Software" class="shadow-2xl rounded-md" />
     </div>
-  </div>
+  </div> -->
 </div>
 
 <style>

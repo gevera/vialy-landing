@@ -40,7 +40,7 @@
             >Миссия</a
           >
         </li>
-        <li>
+        <!-- <li>
           <a
             href="/#system"
             aria-label="Our product"
@@ -48,7 +48,7 @@
             class="font-medium tracking-wide transition-colors duration-200 hover:text-green-400"
             >Система</a
           >
-        </li>
+        </li> -->
         <li>
           <a
             href="/#register"
