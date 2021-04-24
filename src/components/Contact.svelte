@@ -127,7 +127,11 @@
                 <label class="text-xs text-gray-600 sm:text-sm">
                   <input type="checkbox" bind:checked={agreed} />
                   Я подтверждаю свое согласие на обработку моих персональных данных
-                  и согласен с условиями оферты (ссылка на оферту выше)
+                  и согласен с условиями <a
+                  class="text-green-400"
+                  target="_blank"
+                  href="https://docs.google.com/document/d/1z2b4BR7mCeQmNrnjo5O3WA81aqAs_2rBpjkxV6WBsQw/edit"
+                  >оферты</a>
                 </label>
               </div>
               <div class="mt-4 mb-2 sm:mb-4">

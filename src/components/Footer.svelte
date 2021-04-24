@@ -1,6 +1,14 @@
+<script>
+import Logo from "./Logo.svelte";
+
+</script>
 
     <footer class="bottom-0 w-full border-t-2 border-green-400 flex flex-col items-center justify-between px-6 py-2 bg-white dark:bg-gray-800 sm:flex-row">
-        <a href="#hero" class="text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">Brand</a>
+        <a href="#hero" aria-label="Logo" class="text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">
+            <div class="w-10 h-10 text-green-400">
+                <Logo />
+            </div>
+        </a>
         
         <p class="py-2 text-gray-800 dark:text-white sm:py-0">Все права защищены {new Date().getFullYear()}</p>
 

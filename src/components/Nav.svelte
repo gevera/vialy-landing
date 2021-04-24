@@ -11,26 +11,14 @@
         title="Company"
         class="inline-flex items-center"
       >
-        <svg
-          class="w-8 text-deep-purple-accent-400"
-          viewBox="0 0 24 24"
-          stroke-linejoin="round"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-miterlimit="10"
-          stroke="currentColor"
-          fill="none"
-        >
-          <rect x="3" y="1" width="7" height="12" />
-          <rect x="3" y="17" width="7" height="6" />
-          <rect x="14" y="1" width="7" height="6" />
-          <rect x="14" y="11" width="7" height="12" />
-        </svg>
-        <span class="ml-2 text-xl font-bold tracking-wide uppercase"
+        <div class="w-12 h-12 text-green-400">
+          <Logo />
+        </div>
+        <!-- <span class="ml-2 text-xl font-bold tracking-wide uppercase"
           >Company</span
-        >
+        > -->
       </a>
-      <ul class="flex items-center hidden space-x-8 lg:flex">
+      <ul class="items-center hidden space-x-8 lg:flex">
         <li>
           <a
             href="/#mission"
@@ -142,25 +130,13 @@
                     title="Company"
                     class="inline-flex items-center"
                   >
-                    <svg
-                      class="w-8 text-deep-purple-accent-400"
-                      viewBox="0 0 24 24"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-miterlimit="10"
-                      stroke="currentColor"
-                      fill="none"
-                    >
-                      <rect x="3" y="1" width="7" height="12" />
-                      <rect x="3" y="17" width="7" height="6" />
-                      <rect x="14" y="1" width="7" height="6" />
-                      <rect x="14" y="11" width="7" height="12" />
-                    </svg>
-                    <span
+                    <div class="text-green-400 w-10 h-10">
+                      <Logo />
+                    </div>
+                    <!-- <span
                       class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase"
                       >Company</span
-                    >
+                    > -->
                   </a>
                 </div>
                 <div>
@@ -191,7 +167,7 @@
                       >О Нас</a
                     >
                   </li>
-                  <li>
+                  <!-- <li>
                     <a
                       on:click={() => ($sidemenu = false)}
                       href="/#system"
@@ -200,7 +176,7 @@
                       class="font-medium tracking-wide text-green-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >Система</a
                     >
-                  </li>
+                  </li> -->
                   <li>
                     <a
                       on:click={() => ($sidemenu = false)}
@@ -267,13 +243,14 @@
   import { sidemenu, transparent, searchTerm, searchResult } from '../store';
   import { scale } from 'svelte/transition';
   import { goto } from '@sapper/app';
+  import Logo from './Logo.svelte';
 
   const searchPerson = async (st) => {
     const response = await fetch(
       `https://dev3.bedre.ru/people/search?name=${st}`
     );
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     $searchResult = [...data];
   };
 
