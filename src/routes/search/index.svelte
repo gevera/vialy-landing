@@ -14,7 +14,7 @@
               class="overflow-hidden shadow-md hover:shadow-lg rounded-lg h-90 w-full cursor-pointer m-auto"
             >
               <a
-                href="search/{result.id}"
+                href="search/{result.person_id}"
                 class="w-full block h-full"
                 rel="prefetch"
               >
@@ -24,12 +24,17 @@
                 alt={result.name}
               /> -->
                 <div
-                  class="bg-white text-gray-800 hover:text-green-400 w-full p-4 flex justify-between items-center px-8"
+                  class="bg-white text-gray-800 hover:text-green-400 w-full p-4 flex justify-between items-center px-4 md:px-8"
                 >
-                  <h3 class="text-xl font-medium">
-                    {result.name}
-                  </h3>
-                  <div>
+                  <div class="flex items-center">
+                    <img alt={`Avatar for ${result.name}`} src={`https://dev3.bedre.ru/media/${result.filename}`} class="mx-auto object-cover rounded-full h-10 w-10 md:h-16 md:w-16 "/>
+                    <h3 class="md:text-xl font-medium ml-4">
+                      {result.second_name} {result.first_name} {result.agname}
+                      <br>
+                      <span class="text-sm md:text-base">{result.birth_date}</span>
+                    </h3>
+                  </div>
+                  <div class="ml-2">
                     <svg
                       class="w-6 h-6"
                       fill="currentColor"
@@ -64,6 +69,8 @@
 <script lang="ts">
   import { searchResult } from '../../store';
   import PageTransitions from '../../components/PageTransitions.svelte';
+
+  // $: console.log($searchResult);
 </script>
 
 <style>

@@ -26,7 +26,7 @@
       </a>
       <hr />
       <div class="mt-4">
-        <h1 class="text-center text-3xl my-16">{data?.name}</h1>
+        <h1 class="text-center text-3xl my-16">{data.second_name} {data.first_name} {data.agname}</h1>
 
         <div class="flex flex-wrap items-start">
           <div class="mt-4 flex flex-wrap justify-center w-full md:w-1/2">
@@ -57,8 +57,8 @@
                     <h3 class="text-xl text-center mb-4">Родители</h3>
                     {#each roditeli as parent}
                       <ListItem
-                        name={`${parent?.first_name} ${parent?.second_name}`}
-                        dob={parent?.birth_date}
+                        name={`${parent?.relative.second_name} ${parent?.relative.first_name} ${parent?.relative.agname}`}
+                        dob={parent?.relative.birth_date}
                       />
                     {/each}
                   </div>
@@ -69,8 +69,8 @@
                     <h3 class="text-xl text-center mb-4">Дети</h3>
                     {#each rebenoki as baby}
                       <ListItem
-                        name={`${baby?.first_name} ${baby?.second_name}`}
-                        dob={baby?.birth_date}
+                        name={`${baby?.relative.second_name} ${baby?.relative.first_name} ${baby?.relative.agname}`}
+                        dob={baby?.relative.birth_date}
                       />
                     {/each}
                   </div>
@@ -81,8 +81,8 @@
                     <h3 class="text-xl text-center mb-4">Братья и сестры</h3>
                     {#each bratsestra as sibling}
                       <ListItem
-                        name={`${sibling?.first_name} ${sibling?.second_name}`}
-                        dob={sibling?.birth_date}
+                        name={`${sibling?.relative.second_name} ${sibling?.relative.first_name} ${sibling?.relative.agname}`}
+                        dob={sibling?.relative.birth_date}
                       />
                     {/each}
                   </div>
@@ -90,6 +90,8 @@
               </ul>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
@@ -123,14 +125,23 @@
   import ListItem from '../../components/ListItem.svelte';
 
   export let data;
-  let kinsmen = [];
-  // let roditeli = [];
-  // let rebenoki = [];
-  // let bratsestra = [];
-  $: kinsmen = data.kinsmans.sort((a, b) => a.type - b.type);
-  $: roditeli = kinsmen.filter((k) => k.type == 1);
-  $: rebenoki = kinsmen.filter((k) => k.type == 2);
-  $: bratsestra = kinsmen.filter((k) => k.type == 3);
+  // let kinsmen = [];
+  let relationships = [];
+  let roditeli = [];
+  let rebenoki = [];
+  let bratsestra = [];
+  // $: kinsmen = data.kinsmans.sort((a, b) => a.type - b.type);
+  $: if(data.hasOwnProperty('relations')) {
+       relationships = data?.relations?.sort((a, b) => a.type - b.type);
+  }
+  // $: roditeli = kinsmen.filter((k) => k.type == 1);
+  $: roditeli = relationships.filter((k) => k.type == 1);
+  // $: rebenoki = kinsmen.filter((k) => k.type == 2);
+  $: rebenoki = relationships.filter((k) => k.type == 2);
+  // $: bratsestra = kinsmen.filter((k) => k.type == 3);
+  $: bratsestra = relationships.filter((k) => k.type == 3);
+  // $: console.log(data);
+  // $: console.log(relationships);
   // $: console.log(kinsmen);
   // $: console.log(roditeli);
   // $: console.log(rebenoki);
