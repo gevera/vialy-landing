@@ -59,6 +59,7 @@
                       <ListItem
                         name={`${parent?.relative.second_name} ${parent?.relative.first_name} ${parent?.relative.agname}`}
                         dob={parent?.relative.birth_date}
+                        lnk={`/search/${parent.relative.id}`}
                       />
                     {/each}
                   </div>
@@ -71,6 +72,7 @@
                       <ListItem
                         name={`${baby?.relative.second_name} ${baby?.relative.first_name} ${baby?.relative.agname}`}
                         dob={baby?.relative.birth_date}
+                        lnk={`/search/${baby.relative.id}`}
                       />
                     {/each}
                   </div>
@@ -83,6 +85,7 @@
                       <ListItem
                         name={`${sibling?.relative.second_name} ${sibling?.relative.first_name} ${sibling?.relative.agname}`}
                         dob={sibling?.relative.birth_date}
+                        lnk={`/search/${sibling.relative.id}`}
                       />
                     {/each}
                   </div>
